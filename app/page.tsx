@@ -9,7 +9,12 @@ import { SectionHeading } from "@/components/portfolio/section-heading"
 import { SiteNav } from "@/components/portfolio/site-nav"
 import { SiteFooter } from "@/components/portfolio/site-footer"
 import { DesignGallery } from "@/components/portfolio/design-gallery"
+import { RecruiterStrip } from "@/components/portfolio/recruiter-strip"
 import { StatsProofGallery } from "@/components/portfolio/stats-proof-gallery"
+import { MouseSpotlight } from "@/components/portfolio/mouse-spotlight"
+import { ParallaxOrbs } from "@/components/portfolio/parallax-orbs"
+import { SkillsShowcase } from "@/components/portfolio/skills-showcase"
+import { hiringFaq } from "@/lib/faq"
 import { IconGithub, IconLinkedin, IconYoutube } from "@/components/social-icons"
 import {
   Download,
@@ -17,10 +22,10 @@ import {
   Users,
   TrendingUp,
   BarChart3,
-  Code2,
   Check,
   Sparkles,
   ExternalLink,
+  ChevronDown,
 } from "lucide-react"
 
 function ScoreRow({ label, value }: { label: string; value: number }) {
@@ -85,13 +90,13 @@ export default function HomePage() {
   }
 
   return (
-    <div id="top" className="min-h-screen">
+    <main id="main" tabIndex={-1} className="min-h-screen outline-none">
       <SiteNav />
 
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-zinc-200/80 bg-stone-50 pt-20 pb-16 sm:pt-28 sm:pb-24 lg:pt-32 lg:pb-28">
         <div
-          className="pointer-events-none absolute inset-0 opacity-[0.55]"
+          className="pointer-events-none absolute inset-0 z-0 opacity-[0.55]"
           style={{
             backgroundImage: `
               linear-gradient(to right, rgb(0 0 0 / 0.03) 1px, transparent 1px),
@@ -100,10 +105,9 @@ export default function HomePage() {
             backgroundSize: "64px 64px",
           }}
         />
-        <div className="pointer-events-none absolute -right-24 top-0 h-[420px] w-[420px] rounded-full bg-violet-400/20 blur-3xl" />
-        <div className="pointer-events-none absolute -left-32 bottom-0 h-[320px] w-[320px] rounded-full bg-amber-300/25 blur-3xl" />
-
-        <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
+        <MouseSpotlight className="min-h-[1px]">
+          <ParallaxOrbs />
+          <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16 lg:items-center">
             <motion.div
               className="lg:col-span-7"
@@ -120,9 +124,16 @@ export default function HomePage() {
                   Digital marketing · Bangalore
                 </span>
               </div>
-              <h1 className="mt-6 font-[family-name:var(--font-clash)] text-5xl font-semibold tracking-tight text-zinc-950 sm:text-6xl lg:text-7xl">
-                LAKSHATH
-              </h1>
+              <motion.h1
+                className="mt-6 font-[family-name:var(--font-clash)] text-5xl font-semibold tracking-tight text-zinc-950 sm:text-6xl lg:text-7xl"
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.55, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <span className="bg-gradient-to-br from-zinc-950 via-zinc-800 to-zinc-950 bg-clip-text text-transparent">
+                  LAKSHATH
+                </span>
+              </motion.h1>
               <p className="mt-4 max-w-xl text-xl font-medium leading-snug text-zinc-800 sm:text-2xl">
                 Digital marketer & SEO specialist —{" "}
                 <span className="bg-gradient-to-r from-violet-600 to-fuchsia-600 bg-clip-text text-transparent">
@@ -192,7 +203,10 @@ export default function HomePage() {
             </motion.div>
           </div>
         </div>
+        </MouseSpotlight>
       </section>
+
+      <RecruiterStrip />
 
       {/* Stats */}
       <section id="metrics" className="border-b border-zinc-800 bg-zinc-950 py-14 text-white">
@@ -495,112 +509,7 @@ export default function HomePage() {
 
       <DesignGallery />
 
-      {/* Skills & Tools */}
-      <section id="skills" className="border-b border-zinc-200 bg-white py-20 sm:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <FadeIn>
-            <SectionHeading
-              eyebrow="Capabilities"
-              title="Stack & tools"
-              description="What I use day-to-day — from crawl diagnostics to shipping UI."
-            />
-          </FadeIn>
-
-          <div className="grid gap-4 md:grid-cols-4 md:grid-rows-2 md:gap-4">
-            <FadeIn delay={0.05}>
-              <div className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm md:col-span-2 md:row-span-2">
-                <div className="mb-4 flex size-10 items-center justify-center rounded-2xl bg-violet-100 text-violet-700">
-                  <BarChart3 className="size-5" />
-                </div>
-                <h3 className="font-[family-name:var(--font-clash)] text-lg font-semibold text-zinc-900">
-                  SEO & analytics
-                </h3>
-                <p className="mt-2 text-sm text-zinc-600">
-                  Audits, keyword strategy, and performance tracking across the full funnel.
-                </p>
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {[
-                    "Ahrefs",
-                    "SEMrush",
-                    "Screaming Frog",
-                    "GA4",
-                    "Search Console",
-                    "PageSpeed Insights",
-                    "Keyword Planner",
-                    "Ubersuggest",
-                  ].map((tool) => (
-                    <span
-                      key={tool}
-                      className="rounded-full bg-zinc-100 px-3 py-1 text-xs font-medium text-zinc-700"
-                    >
-                      {tool}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </FadeIn>
-
-            <FadeIn delay={0.1}>
-              <div className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm md:col-span-2">
-                <div className="mb-3 flex size-10 items-center justify-center rounded-2xl bg-amber-100 text-amber-800">
-                  <Sparkles className="size-5" />
-                </div>
-                <h3 className="font-[family-name:var(--font-clash)] text-lg font-semibold text-zinc-900">
-                  Design & content
-                </h3>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {[
-                    "Figma",
-                    "Canva",
-                    "Picsart",
-                    "Pixel Lab",
-                    "YouTube Studio",
-                    "TubeBuddy",
-                    "VidIQ",
-                  ].map((tool) => (
-                    <span
-                      key={tool}
-                      className="rounded-full bg-zinc-100 px-3 py-1 text-xs font-medium text-zinc-700"
-                    >
-                      {tool}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </FadeIn>
-
-            <FadeIn delay={0.15}>
-              <div className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm md:col-span-2">
-                <div className="mb-3 flex size-10 items-center justify-center rounded-2xl bg-cyan-100 text-cyan-800">
-                  <Code2 className="size-5" />
-                </div>
-                <h3 className="font-[family-name:var(--font-clash)] text-lg font-semibold text-zinc-900">
-                  Development
-                </h3>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {[
-                    "Next.js",
-                    "React",
-                    "Tailwind CSS",
-                    "Supabase",
-                    "Vercel",
-                    "Netlify",
-                    "GitHub",
-                    "HTML/CSS",
-                  ].map((tool) => (
-                    <span
-                      key={tool}
-                      className="rounded-full bg-zinc-100 px-3 py-1 text-xs font-medium text-zinc-700"
-                    >
-                      {tool}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
+      <SkillsShowcase />
 
       {/* Education */}
       <section id="education" className="border-b border-zinc-200 bg-white py-20 sm:py-24">
@@ -622,8 +531,47 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* FAQ — copy mirrored in JSON-LD (lib/faq.ts) */}
+      <section
+        id="faq"
+        className="border-b border-zinc-200 bg-stone-50 py-20 sm:py-24"
+      >
+        <div className="mx-auto max-w-3xl px-4 sm:px-6">
+          <FadeIn>
+            <SectionHeading
+              eyebrow="Hiring FAQ"
+              title="Questions recruiters ask"
+              description="Straight answers — also marked up for Google as FAQ rich results."
+            />
+          </FadeIn>
+          <div className="mt-10 space-y-3">
+            {hiringFaq.map((item) => (
+              <FadeIn key={item.question}>
+                <details className="group rounded-2xl border border-zinc-200 bg-white px-5 py-4 shadow-sm open:shadow-md">
+                  <summary className="cursor-pointer list-none font-[family-name:var(--font-clash)] text-base font-semibold text-zinc-900 [&::-webkit-details-marker]:hidden">
+                    <span className="flex items-center justify-between gap-3">
+                      {item.question}
+                      <ChevronDown
+                        className="size-5 shrink-0 text-violet-600 transition-transform group-open:rotate-180"
+                        aria-hidden
+                      />
+                    </span>
+                  </summary>
+                  <p className="mt-3 border-t border-zinc-100 pt-3 text-sm leading-relaxed text-zinc-600">
+                    {item.answer}
+                  </p>
+                </details>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
-      <section id="contact" className="bg-stone-50 py-20 sm:py-24">
+      <section
+        id="contact"
+        className="border-t border-zinc-200 bg-white py-20 sm:py-24"
+      >
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
           <FadeIn>
             <div className="relative overflow-hidden rounded-[2rem] border border-zinc-200 bg-gradient-to-br from-zinc-900 via-zinc-950 to-violet-950 p-10 text-center shadow-2xl sm:p-14">
@@ -688,6 +636,6 @@ export default function HomePage() {
       </section>
 
       <SiteFooter />
-    </div>
+    </main>
   )
 }

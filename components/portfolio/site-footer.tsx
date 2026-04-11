@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { IconGithub, IconLinkedin, IconYoutube } from "@/components/social-icons"
+import { person } from "@/lib/site"
 
 export function SiteFooter() {
   return (
@@ -12,6 +13,12 @@ export function SiteFooter() {
           <p className="mt-1 text-sm text-zinc-500">
             Digital marketing · SEO · Web
           </p>
+          <a
+            href={`mailto:${person.email}`}
+            className="mt-2 inline-block text-sm font-medium text-violet-600 hover:text-violet-700"
+          >
+            {person.email}
+          </a>
         </div>
         <div className="flex items-center gap-4">
           <Link

@@ -148,3 +148,23 @@
   50% { transform: translateY(-8px); }
 }
 .animate-float { animation: float 4s ease-in-out infinite; }
+
+/* Skip link — keyboard / screen reader first */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0.75rem;
+  z-index: 100;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background: #18181b;
+  color: #fafafa;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.skip-link:focus {
+  left: 0.75rem;
+  outline: 2px solid #7c3aed;
+  outline-offset: 2px;
+}
