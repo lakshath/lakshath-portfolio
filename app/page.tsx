@@ -20,7 +20,7 @@ import {
   Download,
   Mail,
   Users,
-  TrendingUp,
+  Rocket,
   BarChart3,
   Check,
   Sparkles,
@@ -216,7 +216,7 @@ export default function HomePage() {
               {[
                 { value: "1M+", label: "YouTube views", icon: IconYoutube },
                 { value: "2.8K+", label: "Subscribers", icon: Users },
-                { value: "50+", label: "Sites optimized", icon: TrendingUp },
+                { value: "5+", label: "Portfolio projects", icon: Rocket },
                 { value: "99", label: "PageSpeed score", icon: BarChart3 },
               ].map((stat) => (
                 <div
