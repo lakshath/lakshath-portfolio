@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { FadeIn } from "@/components/portfolio/fade-in"
 import { SectionHeading } from "@/components/portfolio/section-heading"
@@ -11,8 +10,7 @@ import { SiteFooter } from "@/components/portfolio/site-footer"
 import { DesignGallery } from "@/components/portfolio/design-gallery"
 import { RecruiterStrip } from "@/components/portfolio/recruiter-strip"
 import { StatsProofGallery } from "@/components/portfolio/stats-proof-gallery"
-import { MouseSpotlight } from "@/components/portfolio/mouse-spotlight"
-import { ParallaxOrbs } from "@/components/portfolio/parallax-orbs"
+import { HeroSection } from "@/components/portfolio/hero-section"
 import { SkillsShowcase } from "@/components/portfolio/skills-showcase"
 import { hiringFaq } from "@/lib/faq"
 import { IconGithub, IconLinkedin, IconYoutube } from "@/components/social-icons"
@@ -23,7 +21,6 @@ import {
   Rocket,
   BarChart3,
   Check,
-  Sparkles,
   ExternalLink,
   ChevronDown,
 } from "lucide-react"
@@ -93,118 +90,7 @@ export default function HomePage() {
     <main id="main" tabIndex={-1} className="min-h-screen outline-none">
       <SiteNav />
 
-      {/* Hero */}
-      <section className="relative overflow-hidden border-b border-zinc-200/80 bg-stone-50 pt-20 pb-16 sm:pt-28 sm:pb-24 lg:pt-32 lg:pb-28">
-        <div
-          className="pointer-events-none absolute inset-0 z-0 opacity-[0.55]"
-          style={{
-            backgroundImage: `
-              linear-gradient(to right, rgb(0 0 0 / 0.03) 1px, transparent 1px),
-              linear-gradient(to bottom, rgb(0 0 0 / 0.03) 1px, transparent 1px)
-            `,
-            backgroundSize: "64px 64px",
-          }}
-        />
-        <MouseSpotlight className="min-h-[1px]">
-          <ParallaxOrbs />
-          <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16 lg:items-center">
-            <motion.div
-              className="lg:col-span-7"
-              initial={{ opacity: 0, y: 32 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-            >
-              <div className="flex flex-wrap items-center gap-2">
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-violet-200 bg-violet-50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-violet-800">
-                  <Sparkles className="size-3.5" />
-                  Open to roles
-                </span>
-                <span className="text-xs font-medium text-zinc-500">
-                  Digital marketing · Bangalore
-                </span>
-              </div>
-              <motion.h1
-                className="mt-6 font-[family-name:var(--font-clash)] text-5xl font-semibold tracking-tight text-zinc-950 sm:text-6xl lg:text-7xl"
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.55, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-              >
-                <span className="bg-gradient-to-br from-zinc-950 via-zinc-800 to-zinc-950 bg-clip-text text-transparent">
-                  LAKSHATH
-                </span>
-              </motion.h1>
-              <p className="mt-4 max-w-xl text-xl font-medium leading-snug text-zinc-800 sm:text-2xl">
-                Digital marketer & SEO specialist —{" "}
-                <span className="bg-gradient-to-r from-violet-600 to-fuchsia-600 bg-clip-text text-transparent">
-                  growth
-                </span>{" "}
-                backed by data, code, and creative.
-              </p>
-              <p className="mt-5 max-w-xl text-base leading-relaxed text-zinc-600 sm:text-lg">
-                Helping brands scale through technical SEO, content strategy, and
-                fast, conversion-focused web experiences.
-              </p>
-              <div className="mt-8 flex flex-wrap justify-start gap-3">
-                <Link href="/resume.pdf">
-                  <Button className="h-12 gap-2 rounded-2xl bg-zinc-950 px-6 text-sm font-semibold text-white shadow-lg shadow-zinc-900/15 hover:bg-zinc-800">
-                    <Download className="size-4" />
-                    Download resume
-                  </Button>
-                </Link>
-                <Button
-                  onClick={copyEmail}
-                  variant="outline"
-                  className="h-12 rounded-2xl border-zinc-300 bg-white px-6 text-sm font-semibold text-zinc-800 hover:bg-zinc-50"
-                >
-                  <Mail className="mr-2 size-4" />
-                  {emailCopied ? "Copied!" : "14ksh8th@gmail.com"}
-                </Button>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="lg:col-span-5"
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.65, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
-            >
-              <div className="relative rounded-3xl border border-zinc-200/80 bg-white p-6 shadow-xl shadow-zinc-900/5 sm:p-8">
-                <div className="absolute -right-px -top-px h-24 w-24 rounded-br-[3rem] rounded-tr-3xl bg-gradient-to-br from-violet-500/15 to-transparent" />
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
-                  At a glance
-                </p>
-                <ul className="mt-6 space-y-4">
-                  {[
-                    { t: "YouTube", v: "1M+ views · 2.8K+ subs" },
-                    { t: "SEO stack", v: "Ahrefs · SEMrush · GSC · GA4" },
-                    { t: "Web", v: "Next.js · Tailwind · Supabase" },
-                  ].map((row) => (
-                    <li
-                      key={row.t}
-                      className="flex items-start justify-between gap-4 border-b border-zinc-100 pb-4 last:border-0 last:pb-0"
-                    >
-                      <span className="text-sm font-medium text-zinc-500">{row.t}</span>
-                      <span className="text-right text-sm font-semibold text-zinc-900">{row.v}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-8 flex flex-wrap gap-2">
-                  {["Technical SEO", "Content", "UI/UX", "Analytics"].map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full bg-zinc-100 px-3 py-1 text-xs font-medium text-zinc-700"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-        </MouseSpotlight>
-      </section>
+      <HeroSection emailCopied={emailCopied} onCopyEmail={copyEmail} />
 
       <RecruiterStrip />
 
