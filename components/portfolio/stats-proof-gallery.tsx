@@ -86,7 +86,7 @@ export function StatsProofGallery() {
         <SectionHeading
           eyebrow="Evidence"
           title="Third-party proof"
-          description="PageSpeed and YouTube Studio — tools recruiters recognize. Screenshots are chosen to show strong lab scores and channel scale, not noisy traffic charts that read poorly out of context."
+          description="PageSpeed, Ahrefs Site Audit, and YouTube Studio — screenshots chosen for strong lab scores, crawl health, and channel scale."
         />
       </FadeIn>
 
