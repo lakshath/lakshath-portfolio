@@ -97,10 +97,14 @@ export default function HomePage() {
           <FadeIn>
             <div className="grid grid-cols-2 gap-10 md:grid-cols-4 md:gap-8">
               {[
-                { value: "1M+", label: "YouTube views", icon: IconYoutube },
-                { value: "2.8K+", label: "Subscribers", icon: Users },
-                { value: "5+", label: "Portfolio projects", icon: Rocket },
-                { value: "99", label: "PageSpeed score", icon: BarChart3 },
+                { value: "1M+", label: "YouTube views (lifetime)", icon: IconYoutube },
+                { value: "2.8K+", label: "Channel subscribers", icon: Users },
+                { value: "5+", label: "Shipped projects (live)", icon: Rocket },
+                {
+                  value: "99",
+                  label: "Best desktop PSI — ownstreet.in",
+                  icon: BarChart3,
+                },
               ].map((stat) => (
                 <div
                   key={stat.label}
@@ -136,8 +140,12 @@ export default function HomePage() {
             <h2 className="font-[family-name:var(--font-clash)] text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl">
               jobless_edits
             </h2>
+            <p className="mt-2 text-sm font-medium text-white/70">
+              Creator channel — packaging, retention, and search-led discovery
+            </p>
             <p className="text-white/80 mb-10 mt-3 text-lg">
-              SEO-driven titles, thumbnails, and content optimization at scale.
+              SEO-driven titles, thumbnails, and packaging — with channel metrics cross-checked against
+              YouTube Studio screenshots on this site.
             </p>
             <div className="mx-auto grid max-w-lg grid-cols-2 gap-4">
               <div className="rounded-2xl border border-white/20 bg-white/10 p-6">
@@ -152,6 +160,17 @@ export default function HomePage() {
                 </div>
                 <div className="mt-1 text-sm text-white/70">Subscribers</div>
               </div>
+            </div>
+            <div className="mt-8">
+              <Link
+                href="https://www.youtube.com/@jobless_edits"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-2xl border border-white/25 bg-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/25"
+              >
+                Open channel
+                <ExternalLink className="ml-2 size-4" />
+              </Link>
             </div>
           </FadeIn>
         </div>
@@ -309,7 +328,8 @@ export default function HomePage() {
               St. Vincent Pallotti College, Bangalore North University
             </p>
             <p className="mt-2 text-sm text-zinc-500">
-              Completed 5th & 6th semester · Awaiting results
+              Final-year B.Com — coursework through 6th semester complete; degree awarded on university
+              result declaration.
             </p>
           </FadeIn>
         </div>
@@ -386,7 +406,7 @@ export default function HomePage() {
                 </div>
                 <div className="mt-10 flex justify-center gap-5">
                   <Link
-                    href="https://linkedin.com/in/lakshath/"
+                    href="https://www.linkedin.com/in/lakshath/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white/70 transition-colors hover:text-white"

@@ -41,7 +41,7 @@ const stacks = [
   {
     title: "Development",
     description:
-      "AI-assisted shipping — vibe coding with modern hosting, auth-ready backends, and email that actually lands.",
+      "AI-assisted development — fast iteration with Claude, ChatGPT, and modern hosting (Supabase, Vercel, Netlify) plus transactional email.",
     icon: Code2,
     glow: "from-cyan-500/30 to-blue-600/20",
     iconBg: "bg-cyan-100 text-cyan-800 ring-cyan-200/80",

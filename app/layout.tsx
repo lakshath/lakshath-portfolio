@@ -21,7 +21,7 @@ const clashDisplay = localFont({
 
 const titleDefault = "Lakshath | Digital Marketer & SEO Specialist"
 const description =
-  "Portfolio: technical SEO, Search Console & analytics proof, content and design collateral (healthcare clients), Next.js projects, and 1M+ YouTube reach. Based in Bengaluru, India — open to digital marketing & SEO roles."
+  "Portfolio: technical SEO, Search Console & analytics proof, healthcare marketing creative (Vaidyog, Medasus), Next.js products, and a 1M+ view YouTube channel. Bengaluru, India — open to digital marketing & SEO roles."
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

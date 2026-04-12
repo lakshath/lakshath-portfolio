@@ -20,4 +20,14 @@ export const hiringFaq = [
     answer:
       "Third-party screenshots on this page include PageSpeed Insights, Google Search Console, and YouTube Studio. Design work includes client flyers and collateral. Live site links are listed under Projects.",
   },
+  {
+    question: "When can you start, and what is your notice period?",
+    answer:
+      "For full-time roles, I can discuss start dates based on your offer and any current commitments. If you need someone immediately, say so in the email and I’ll confirm availability for that timeline.",
+  },
+  {
+    question: "How do you balance AI tools with quality and accuracy?",
+    answer:
+      "I use AI for drafting, refactoring, and speed — then I verify facts, SEO, and brand voice manually. Shipping code and campaigns still goes through Search Console, analytics, and client/stakeholder feedback.",
+  },
 ] as const

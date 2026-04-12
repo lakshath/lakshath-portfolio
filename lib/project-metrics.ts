@@ -61,7 +61,12 @@ export const projectMetrics: ProjectMetricEntry[] = [
     name: "trishola.com",
     url: "https://trishola.com",
     kind: "lighthouse",
-    lighthouse: { performance: 93, seo: 95, accessibility: 92 },
+    lighthouse: {
+      performance: 93,
+      accessibility: 95,
+      bestPractices: 100,
+      seo: 100,
+    },
     note: "Blog — content, UI, SEO",
   },
   {
