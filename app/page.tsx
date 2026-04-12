@@ -66,12 +66,6 @@ const projects = [
     tags: ["Next.js", "Supabase", "Razorpay"],
     link: "https://ownstreet.in",
   },
-  {
-    title: "Vaidyog Blog",
-    desc: "Medical job portal blog built from scratch with SEO",
-    tags: ["HTML/CSS", "SEO", "Content"],
-    link: "https://blog.vaidyog.com",
-  },
 ]
 
 export default function HomePage() {
@@ -99,7 +93,7 @@ export default function HomePage() {
               {[
                 { value: "1M+", label: "YouTube views (lifetime)", icon: IconYoutube },
                 { value: "2.8K+", label: "Channel subscribers", icon: Users },
-                { value: "5+", label: "Shipped projects (live)", icon: Rocket },
+                { value: "3+", label: "Shipped projects (live)", icon: Rocket },
                 {
                   value: "99",
                   label: "Best desktop PSI — ownstreet.in",

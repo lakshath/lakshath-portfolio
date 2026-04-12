@@ -6,4 +6,4 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 ## Git / deploy
 
-- Push to `origin` **only after** the requested changes are done (build/lints OK when applicable). Do not push incomplete work or as a default unless the user explicitly asked to deploy or push.
+- When a task is **done** (build/lints OK when applicable), **commit and push to `origin`** so Vercel deploys — unless the user explicitly says not to push.

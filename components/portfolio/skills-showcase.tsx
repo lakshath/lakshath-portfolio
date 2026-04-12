@@ -31,11 +31,20 @@ const stacks = [
   {
     title: "Design & content",
     description:
-      "Thumbnails, social creatives, and packaging — Figma and mobile-first design apps for feed-ready assets.",
+      "Visual assets plus AI-assisted drafting for blogs, scripts, and social — then edited for brand voice and accuracy.",
     icon: Sparkles,
     glow: "from-amber-500/30 to-orange-500/20",
     iconBg: "bg-amber-100 text-amber-800 ring-amber-200/80",
-    tools: ["Figma", "Canva", "Picsart", "Pixel Lab"],
+    tools: [
+      "Figma",
+      "Canva",
+      "Picsart",
+      "Pixel Lab",
+      "Claude",
+      "ChatGPT",
+      "DeepSeek",
+      "Gemini",
+    ],
     delay: 0.1,
   },
   {
@@ -52,9 +61,6 @@ const stacks = [
       "Gemini",
       "Cursor",
       "VS Code",
-      "Next.js",
-      "React",
-      "Tailwind CSS",
       "Supabase",
       "Vercel",
       "Netlify",
