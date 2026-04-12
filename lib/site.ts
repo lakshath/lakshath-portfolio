@@ -5,7 +5,7 @@ export const siteUrl =
 
 export const person = {
   name: "Lakshath",
-  email: "14ksh8th@gmail.com",
+  email: "l4ksh8th@gmail.com",
   location: "Bengaluru, India",
   jobTitle: "Digital Marketer & SEO Specialist",
   linkedIn: "https://www.linkedin.com/in/lakshath/",

@@ -72,7 +72,7 @@ export default function HomePage() {
   const [emailCopied, setEmailCopied] = useState(false)
 
   const copyEmail = () => {
-    navigator.clipboard.writeText("14ksh8th@gmail.com")
+    navigator.clipboard.writeText("l4ksh8th@gmail.com")
     setEmailCopied(true)
     setTimeout(() => setEmailCopied(false), 2000)
   }

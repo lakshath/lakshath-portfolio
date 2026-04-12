@@ -13,7 +13,7 @@ export const hiringFaq = [
   {
     question: "How should recruiters contact you?",
     answer:
-      "Email is best for formal outreach: 14ksh8th@gmail.com. You can also message me on LinkedIn. A PDF resume is available from this site.",
+      "Email is best for formal outreach: l4ksh8th@gmail.com. You can also message me on LinkedIn. A PDF resume is available from this site.",
   },
   {
     question: "What proof do you have beyond this portfolio?",
