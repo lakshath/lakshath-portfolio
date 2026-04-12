@@ -18,7 +18,7 @@ export const hiringFaq = [
   {
     question: "What proof do you have beyond this portfolio?",
     answer:
-      "Third-party screenshots include PageSpeed Insights, Ahrefs (including DR work at Vaidyog), and YouTube Studio; the metrics section adds extra Lighthouse and Ahrefs figures for other sites. Design work includes client flyers and collateral. Project links are under Live projects.",
+      "Screenshots here focus on Ahrefs (DR work at Vaidyog) and YouTube Studio; the metrics section above has PageSpeed / Lighthouse scores for live sites plus other Ahrefs-style figures. Design work includes client flyers and collateral. Project links are under Live projects.",
   },
   {
     question: "When can you start, and what is your notice period?",

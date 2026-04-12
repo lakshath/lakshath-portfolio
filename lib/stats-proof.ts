@@ -1,7 +1,6 @@
 /**
- * Third-party proof (PageSpeed, Ahrefs, YouTube Studio). Curated for a digital marketing narrative:
- * strong Lighthouse scores, authority/crawl proof, and platform-scale audience metrics.
- * Omitted: screenshots where metrics were weak or easy to misread (e.g. low-traffic GSC panels).
+ * Third-party proof (Ahrefs, YouTube Studio). Curated screenshots — authority work and channel scale.
+ * Lighthouse / PageSpeed for live sites lives in the metrics section above.
  */
 export type StatsProofItem = {
   src: string
@@ -10,18 +9,6 @@ export type StatsProofItem = {
 }
 
 export const statsProofImages: StatsProofItem[] = [
-  {
-    src: "/images/stats-proof/pagespeed-ownstreet-desktop.png",
-    title: "PageSpeed Insights — ownstreet.in",
-    caption:
-      "Desktop: 99 Performance · 100 SEO · 100 Best Practices · 95 Accessibility (founder build).",
-  },
-  {
-    src: "/images/stats-proof/pagespeed-trishola-desktop.png",
-    title: "PageSpeed Insights — trishola.com",
-    caption:
-      "Desktop: 93 Performance · 100 SEO · 100 Best Practices · 95 Accessibility — technical + on-page SEO delivery.",
-  },
   {
     src: "/images/stats-proof/ahrefs-vaidyog-domain-rating.png",
     title: "Ahrefs Site Explorer — Vaidyog",
