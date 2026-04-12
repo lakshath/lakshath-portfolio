@@ -1,5 +1,6 @@
 "use client"
 
+import dynamic from "next/dynamic"
 import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -7,11 +8,25 @@ import { FadeIn } from "@/components/portfolio/fade-in"
 import { SectionHeading } from "@/components/portfolio/section-heading"
 import { SiteNav } from "@/components/portfolio/site-nav"
 import { SiteFooter } from "@/components/portfolio/site-footer"
-import { DesignGallery } from "@/components/portfolio/design-gallery"
 import { RecruiterStrip } from "@/components/portfolio/recruiter-strip"
-import { StatsProofGallery } from "@/components/portfolio/stats-proof-gallery"
 import { HeroSection } from "@/components/portfolio/hero-section"
-import { SkillsShowcase } from "@/components/portfolio/skills-showcase"
+import { ProjectMetricsSection } from "@/components/portfolio/project-metrics-section"
+
+const DesignGallery = dynamic(
+  () =>
+    import("@/components/portfolio/design-gallery").then((m) => ({
+      default: m.DesignGallery,
+    })),
+  { loading: () => <div className="mx-auto h-48 max-w-6xl animate-pulse rounded-2xl bg-zinc-100" /> }
+)
+
+const SkillsShowcase = dynamic(
+  () =>
+    import("@/components/portfolio/skills-showcase").then((m) => ({
+      default: m.SkillsShowcase,
+    })),
+  { loading: () => <div className="mx-auto h-96 max-w-6xl animate-pulse rounded-2xl bg-zinc-100" /> }
+)
 import { hiringFaq } from "@/lib/faq"
 import { IconGithub, IconLinkedin, IconYoutube } from "@/components/social-icons"
 import {
@@ -24,24 +39,6 @@ import {
   ExternalLink,
   ChevronDown,
 } from "lucide-react"
-
-function ScoreRow({ label, value }: { label: string; value: number }) {
-  const pct = Math.min(100, value)
-  return (
-    <div className="space-y-2">
-      <div className="flex justify-between text-sm">
-        <span className="text-zinc-600">{label}</span>
-        <span className="font-semibold tabular-nums text-emerald-600">{value}</span>
-      </div>
-      <div className="h-1.5 overflow-hidden rounded-full bg-zinc-100">
-        <div
-          className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-teal-500"
-          style={{ width: `${pct}%` }}
-        />
-      </div>
-    </div>
-  )
-}
 
 const projectGradients = [
   "from-violet-500 via-fuchsia-500 to-pink-500",
@@ -121,106 +118,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Technical SEO */}
-      <section id="seo" className="border-b border-zinc-200 bg-white py-20 sm:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <FadeIn>
-            <SectionHeading
-              eyebrow="Proof"
-              title="Performance metrics that matter"
-              description="Real Lighthouse scores and SEO health from sites I’ve worked on — not vanity metrics."
-            />
-          </FadeIn>
-
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <FadeIn delay={0.05}>
-              <article className="flex h-full flex-col rounded-3xl border border-zinc-200 bg-stone-50/60 p-6 shadow-sm transition-shadow hover:shadow-lg">
-                <div className="mb-6 flex items-center gap-3">
-                  <span className="text-2xl" aria-hidden>
-                    🚀
-                  </span>
-                  <h3 className="font-[family-name:var(--font-clash)] text-lg font-semibold text-zinc-900">
-                    ownstreet.in
-                  </h3>
-                </div>
-                <div className="flex flex-1 flex-col gap-4">
-                  <ScoreRow label="Performance" value={99} />
-                  <ScoreRow label="SEO" value={100} />
-                  <ScoreRow label="Accessibility" value={95} />
-                  <ScoreRow label="Best practices" value={100} />
-                </div>
-              </article>
-            </FadeIn>
-
-            <FadeIn delay={0.1}>
-              <article className="flex h-full flex-col rounded-3xl border border-zinc-200 bg-stone-50/60 p-6 shadow-sm transition-shadow hover:shadow-lg">
-                <div className="mb-6 flex items-center gap-3">
-                  <span className="text-2xl" aria-hidden>
-                    📝
-                  </span>
-                  <h3 className="font-[family-name:var(--font-clash)] text-lg font-semibold text-zinc-900">
-                    trishola.com
-                  </h3>
-                </div>
-                <div className="flex flex-1 flex-col gap-4">
-                  <ScoreRow label="Performance" value={93} />
-                  <ScoreRow label="SEO" value={95} />
-                  <ScoreRow label="Accessibility" value={92} />
-                </div>
-              </article>
-            </FadeIn>
-
-            <FadeIn delay={0.15}>
-              <article className="flex h-full flex-col rounded-3xl border border-zinc-200 bg-stone-50/60 p-6 shadow-sm transition-shadow hover:shadow-lg md:col-span-2 lg:col-span-1">
-                <div className="mb-6 flex items-center gap-3">
-                  <span className="text-2xl" aria-hidden>
-                    🔧
-                  </span>
-                  <h3 className="font-[family-name:var(--font-clash)] text-lg font-semibold text-zinc-900">
-                    Ahrefs (Trishola)
-                  </h3>
-                </div>
-                <div className="space-y-4">
-                  <div className="flex justify-between text-sm">
-                    <span className="text-zinc-600">Health score</span>
-                    <span className="font-semibold text-emerald-600">94</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-zinc-600">Organic keywords</span>
-                    <span className="font-semibold text-violet-600">11+</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-zinc-600">Crawled pages</span>
-                    <span className="font-semibold text-violet-600">48</span>
-                  </div>
-                </div>
-              </article>
-            </FadeIn>
-          </div>
-
-          <FadeIn delay={0.05}>
-            <div className="mt-10 flex flex-wrap justify-center gap-2">
-              {[
-                "Ahrefs",
-                "SEMrush",
-                "Screaming Frog",
-                "Google Analytics 4",
-                "Search Console",
-                "PageSpeed Insights",
-              ].map((tool) => (
-                <span
-                  key={tool}
-                  className="rounded-full border border-zinc-200 bg-white px-4 py-2 text-xs font-medium text-zinc-700"
-                >
-                  {tool}
-                </span>
-              ))}
-            </div>
-          </FadeIn>
-
-          <StatsProofGallery />
-        </div>
-      </section>
+      <ProjectMetricsSection />
 
       {/* YouTube */}
       <section
@@ -242,13 +140,13 @@ export default function HomePage() {
               SEO-driven titles, thumbnails, and content optimization at scale.
             </p>
             <div className="mx-auto grid max-w-lg grid-cols-2 gap-4">
-              <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-md">
+              <div className="rounded-2xl border border-white/20 bg-white/10 p-6">
                 <div className="font-[family-name:var(--font-clash)] text-4xl font-semibold text-white">
                   1M+
                 </div>
                 <div className="mt-1 text-sm text-white/70">Total views</div>
               </div>
-              <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-md">
+              <div className="rounded-2xl border border-white/20 bg-white/10 p-6">
                 <div className="font-[family-name:var(--font-clash)] text-4xl font-semibold text-white">
                   2.8K+
                 </div>

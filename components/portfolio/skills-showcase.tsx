@@ -1,17 +1,15 @@
 "use client"
 
-import { motion } from "framer-motion"
 import { BarChart3, Code2, Sparkles } from "lucide-react"
 import { FadeIn } from "@/components/portfolio/fade-in"
 import { SectionHeading } from "@/components/portfolio/section-heading"
-import { TiltPanel } from "@/components/portfolio/tilt-panel"
 import { cn } from "@/lib/utils"
 
 const stacks = [
   {
     title: "SEO & analytics",
     description:
-      "Audits, keyword strategy, and performance tracking across the full funnel — from crawl to conversion.",
+      "Search, crawl, and measurement — web analytics plus YouTube channel performance (Studio, TubeBuddy, VidIQ).",
     icon: BarChart3,
     glow: "from-violet-500/30 to-fuchsia-500/20",
     iconBg: "bg-violet-100 text-violet-700 ring-violet-200/80",
@@ -24,35 +22,36 @@ const stacks = [
       "PageSpeed Insights",
       "Keyword Planner",
       "Ubersuggest",
+      "YouTube Studio",
+      "TubeBuddy",
+      "VidIQ",
     ],
     delay: 0.05,
   },
   {
     title: "Design & content",
     description:
-      "Campaign creatives, social assets, thumbnails, and packaging for channels that need to stand out in the feed.",
+      "Thumbnails, social creatives, and packaging — Figma and mobile-first design apps for feed-ready assets.",
     icon: Sparkles,
     glow: "from-amber-500/30 to-orange-500/20",
     iconBg: "bg-amber-100 text-amber-800 ring-amber-200/80",
-    tools: [
-      "Figma",
-      "Canva",
-      "Picsart",
-      "Pixel Lab",
-      "YouTube Studio",
-      "TubeBuddy",
-      "VidIQ",
-    ],
+    tools: ["Figma", "Canva", "Picsart", "Pixel Lab"],
     delay: 0.1,
   },
   {
     title: "Development",
     description:
-      "Shipping fast, accessible interfaces — from landing pages to full-stack apps with payments and auth.",
+      "AI-assisted shipping — vibe coding with modern hosting, auth-ready backends, and email that actually lands.",
     icon: Code2,
     glow: "from-cyan-500/30 to-blue-600/20",
     iconBg: "bg-cyan-100 text-cyan-800 ring-cyan-200/80",
     tools: [
+      "Claude",
+      "ChatGPT",
+      "DeepSeek",
+      "Gemini",
+      "Cursor",
+      "VS Code",
       "Next.js",
       "React",
       "Tailwind CSS",
@@ -60,6 +59,7 @@ const stacks = [
       "Vercel",
       "Netlify",
       "GitHub",
+      "Resend",
       "HTML/CSS",
     ],
     delay: 0.15,
@@ -69,58 +69,52 @@ const stacks = [
 function SkillCard({ stack }: { stack: (typeof stacks)[number] }) {
   const Icon = stack.icon
   return (
-    <TiltPanel className="h-full">
-      <motion.div
+    <div
+      className={cn(
+        "group relative flex h-full min-h-[24rem] flex-col overflow-hidden rounded-3xl border border-zinc-200/90 bg-gradient-to-b from-white to-zinc-50/90 p-6 shadow-sm transition-[transform,box-shadow] duration-300 sm:min-h-[26rem] sm:p-7",
+        "hover:-translate-y-1 hover:border-violet-200/90 hover:shadow-lg hover:shadow-violet-500/[0.06]"
+      )}
+    >
+      <div
         className={cn(
-          "group relative flex h-full min-h-[26rem] flex-col overflow-hidden rounded-3xl border border-zinc-200/90 bg-gradient-to-b from-white to-zinc-50/90 p-6 shadow-sm transition-shadow duration-300 sm:min-h-[28rem] sm:p-7",
-          "hover:border-violet-200/90 hover:shadow-xl hover:shadow-violet-500/[0.07]"
+          "pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-gradient-to-br opacity-70 blur-2xl transition-opacity duration-500 group-hover:opacity-100",
+          stack.glow
         )}
-        whileHover={{ y: -5 }}
-        transition={{ type: "spring", stiffness: 420, damping: 28 }}
-      >
+      />
+
+      <div className="relative flex items-start gap-4">
         <div
           className={cn(
-            "pointer-events-none absolute -right-16 -top-16 h-44 w-44 rounded-full bg-gradient-to-br blur-3xl transition-opacity duration-500 group-hover:opacity-100",
-            stack.glow
+            "flex size-12 shrink-0 items-center justify-center rounded-2xl ring-2 ring-inset shadow-sm",
+            stack.iconBg
           )}
-        />
-
-        <div className="relative flex items-start gap-4">
-          <div
-            className={cn(
-              "flex size-12 shrink-0 items-center justify-center rounded-2xl ring-2 ring-inset shadow-sm",
-              stack.iconBg
-            )}
-          >
-            <Icon className="size-6" aria-hidden />
-          </div>
-          <div>
-            <h3 className="font-[family-name:var(--font-clash)] text-xl font-semibold tracking-tight text-zinc-900">
-              {stack.title}
-            </h3>
-            <p className="mt-2 text-sm leading-relaxed text-zinc-600">{stack.description}</p>
-          </div>
+        >
+          <Icon className="size-6" aria-hidden />
         </div>
-
-        <div className="relative mt-6 flex flex-1 flex-col border-t border-zinc-100/90 pt-6">
-          <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-400">
-            Tools & platforms
-          </p>
-          <div className="flex flex-wrap gap-2">
-            {stack.tools.map((tool) => (
-              <motion.span
-                key={tool}
-                whileHover={{ scale: 1.05, y: -1 }}
-                whileTap={{ scale: 0.98 }}
-                className="cursor-default rounded-full border border-zinc-200/90 bg-white/90 px-3 py-1.5 text-xs font-medium text-zinc-700 shadow-sm backdrop-blur-sm transition-colors hover:border-violet-300 hover:bg-violet-50/90 hover:text-violet-900"
-              >
-                {tool}
-              </motion.span>
-            ))}
-          </div>
+        <div>
+          <h3 className="font-[family-name:var(--font-clash)] text-xl font-semibold tracking-tight text-zinc-900">
+            {stack.title}
+          </h3>
+          <p className="mt-2 text-sm leading-relaxed text-zinc-600">{stack.description}</p>
         </div>
-      </motion.div>
-    </TiltPanel>
+      </div>
+
+      <div className="relative mt-6 flex flex-1 flex-col border-t border-zinc-100/90 pt-6">
+        <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-400">
+          Tools & platforms
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {stack.tools.map((tool) => (
+            <span
+              key={tool}
+              className="cursor-default rounded-full border border-zinc-200/90 bg-white px-3 py-1.5 text-xs font-medium text-zinc-700 shadow-sm transition-colors hover:border-violet-300 hover:bg-violet-50/90 hover:text-violet-900"
+            >
+              {tool}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
   )
 }
 
@@ -135,7 +129,7 @@ export function SkillsShowcase() {
           <SectionHeading
             eyebrow="Capabilities"
             title="Stack & tools"
-            description="Three pillars — move your mouse over the cards for a subtle tilt. Pills light up on hover."
+            description="Three pillars — SEO and analytics (including YouTube), design and content, and AI-assisted development with the stack I ship on."
           />
         </FadeIn>
 
