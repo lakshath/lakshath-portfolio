@@ -86,7 +86,7 @@ export function StatsProofGallery() {
         <SectionHeading
           eyebrow="Evidence"
           title="Third-party proof"
-          description="Lighthouse, Search Console, and YouTube Studio — tools recruiters recognize. Focused on scores and trends that reflect execution, not cherry-picked vanity charts."
+          description="PageSpeed and YouTube Studio — tools recruiters recognize. Screenshots are chosen to show strong lab scores and channel scale, not noisy traffic charts that read poorly out of context."
         />
       </FadeIn>
 

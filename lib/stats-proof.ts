@@ -1,7 +1,7 @@
 /**
  * Third-party proof (PageSpeed, GSC, YouTube Studio). Curated for a digital marketing narrative:
  * strong Lighthouse/SEO scores, search visibility, and platform-scale audience metrics.
- * Omitted: screenshots where metrics were weak or easy to misread (e.g. subdomain DR, near-zero traffic rows).
+ * Omitted: screenshots where metrics were weak or easy to misread (e.g. low-traffic GSC panels, subdomain DR).
  */
 export type StatsProofItem = {
   src: string
@@ -21,12 +21,6 @@ export const statsProofImages: StatsProofItem[] = [
     title: "PageSpeed Insights — trishola.com",
     caption:
       "Desktop: 93 Performance · 100 SEO · 100 Best Practices · 95 Accessibility — technical + on-page SEO delivery.",
-  },
-  {
-    src: "/images/stats-proof/gsc-trishola-performance.png",
-    title: "Google Search Console — trishola.com",
-    caption:
-      "6-month view: visibility and ranking trends in Search (clicks, impressions, average position).",
   },
   {
     src: "/images/stats-proof/youtube-studio-jobless-edits.png",
