@@ -86,7 +86,7 @@ export function StatsProofGallery() {
         <SectionHeading
           eyebrow="Evidence"
           title="Third-party proof"
-          description="PageSpeed, Ahrefs Site Audit, and YouTube Studio — screenshots chosen for strong lab scores, crawl health, and channel scale."
+          description="PageSpeed, Ahrefs (DR growth at Vaidyog), and YouTube Studio — lab scores, authority trend, and channel scale."
         />
       </FadeIn>
 

@@ -1,6 +1,6 @@
 /**
  * Third-party proof (PageSpeed, Ahrefs, YouTube Studio). Curated for a digital marketing narrative:
- * strong Lighthouse scores, crawl/health audits, and platform-scale audience metrics.
+ * strong Lighthouse scores, authority/crawl proof, and platform-scale audience metrics.
  * Omitted: screenshots where metrics were weak or easy to misread (e.g. low-traffic GSC panels).
  */
 export type StatsProofItem = {
@@ -23,10 +23,10 @@ export const statsProofImages: StatsProofItem[] = [
       "Desktop: 93 Performance · 100 SEO · 100 Best Practices · 95 Accessibility — technical + on-page SEO delivery.",
   },
   {
-    src: "/images/stats-proof/ahrefs-trishola-site-audit.png",
-    title: "Ahrefs Site Audit — trishola.com",
+    src: "/images/stats-proof/ahrefs-vaidyog-domain-rating.png",
+    title: "Ahrefs Site Explorer — Vaidyog",
     caption:
-      "Health Score 94 (Excellent): crawl overview, issue mix, and stable health trend — technical SEO + site quality beyond lab scores.",
+      "Domain Rating 18 → 24 within one month while interning (off-page SEO, backlinks, technical fixes). Ahrefs DR trend + Site Explorer overview.",
   },
   {
     src: "/images/stats-proof/youtube-studio-jobless-edits.png",
