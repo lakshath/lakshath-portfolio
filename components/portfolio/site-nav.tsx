@@ -70,7 +70,7 @@ export function SiteNav() {
           </nav>
 
           <div className="ml-auto flex shrink-0 items-center gap-1.5 sm:gap-2">
-            <Link href="/resume.pdf" className="hidden sm:block">
+            <Link href="/resume-lakshath-dm.pdf" className="hidden sm:block">
               <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
                 <Button className="h-8 gap-1.5 rounded-xl border border-violet-600/15 bg-gradient-to-r from-zinc-900 to-zinc-800 px-3 text-[11px] font-semibold text-white shadow-md shadow-violet-500/10 sm:h-9 sm:px-4 sm:text-xs">
                   <Download className="size-3.5" />
@@ -107,7 +107,7 @@ export function SiteNav() {
                 </a>
               ))}
               <Link
-                href="/resume.pdf"
+                href="/resume-lakshath-dm.pdf"
                 className="mt-1 flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-zinc-900 to-zinc-800 py-3 text-sm font-semibold text-white"
                 onClick={() => setOpen(false)}
               >

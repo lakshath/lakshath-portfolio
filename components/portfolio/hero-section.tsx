@@ -97,7 +97,7 @@ export function HeroSection({ emailCopied, onCopyEmail }: HeroSectionProps) {
               </motion.p>
 
               <motion.div variants={item} className="mt-8 flex flex-wrap gap-3">
-                <Link href="/resume.pdf">
+                <Link href="/resume-lakshath-dm.pdf">
                   <Button className="h-12 gap-2 rounded-2xl bg-zinc-950 px-7 text-sm font-semibold text-white shadow-xl shadow-zinc-900/20 ring-2 ring-zinc-950/10 transition hover:bg-zinc-800 hover:shadow-2xl">
                     <Download className="size-4" />
                     Download resume

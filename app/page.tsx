@@ -383,7 +383,7 @@ export default function HomePage() {
                   Looking for a marketer who bridges SEO, content, and the technical side of the web?
                 </p>
                 <div className="mt-8 flex flex-wrap justify-center gap-3">
-                  <Link href="/resume.pdf">
+                  <Link href="/resume-lakshath-dm.pdf">
                     <Button className="h-12 gap-2 rounded-2xl bg-white px-8 text-sm font-semibold text-zinc-900 hover:bg-zinc-100">
                       <Download className="size-4" />
                       Download resume

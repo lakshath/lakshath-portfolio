@@ -68,7 +68,7 @@ export function RecruiterStrip() {
                 LinkedIn profile
               </Link>
               <Link
-                href="/resume.pdf"
+                href="/resume-lakshath-dm.pdf"
                 className="flex items-center gap-2 rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm font-medium text-zinc-800 transition hover:border-violet-300 hover:bg-violet-50/50"
               >
                 <FileText className="size-4 text-violet-600" aria-hidden />
